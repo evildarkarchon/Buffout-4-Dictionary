@@ -503,9 +503,9 @@ For players that don’t want to use Workshop Framework, use [Power Grid Tools](
 ### Criteria: LooseFileAsyncStream
 *You went over your BA2 limit, which triggers after reaching a certain number of plugins that load at least one BA2 archive. This limit is dynamic and changes based on the number of installed mods.*
 
-**Solution:** For OG (1.10.163) You can unpack the smallest (in terms of bytes) Main.ba2 archives from mods with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files&file_id=199921) or [BSA Browser](https://www.nexusmods.com/fallout4/mods/17061) until crashing stops or you get a different crash message error. Instructions on how to unpack BA2 archives with CAO available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
+**Solution:** For OG (1.10.163) Archives, you can unpack the smallest (in terms of bytes) Main.ba2 archives from mods with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files&file_id=199921) or [BSA Browser](https://www.nexusmods.com/fallout4/mods/17061) until crashing stops or you get a different crash message error. Instructions on how to unpack BA2 archives with CAO available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
 
-For NG (1.10.980+) Archives, you should use the latest builds of BSArchPro from the [xEdit Discord Server](https://discord.gg/5t8RnNQ) in the #xedit-builds channel. It is not recommended to use the actual builds of xEdit, as they are usually emergency releases or testing builds.
+For NG (1.10.980+) Archives, you should do the above using the latest builds of BSArch or BSArchPro from the [xEdit Discord Server](https://discord.gg/5t8RnNQ) in the #xedit-builds channel. It is not recommended to use the actual builds of xEdit, as they are usually emergency releases or testing builds.
 
 You should also only unpack Main.ba2 archives, Texture archives have a separate limit with different (technically non-fatal) consequences.
 
@@ -521,17 +521,9 @@ Mods that attempt to increase the limit should have those options disabled.***
 
 [CM Toolkit](https://www.nexusmods.com/fallout4/mods/87907) can be used to get your current BA2 counts.
 
-**To see the correct amount of total BA2 archives you have currently loaded:**
 
-**MO2** – Simplest way is to navigate to your current MO2 profile folder and open the **archive.txt** file with a text editor that supports showing the number of text lines (ex. Notepad++). This file lists all BA2 archives the game will attempt to load, simply look at how many lines there are in total.
-
-**Alternative Method:** Run **Explore Virtual Folder** from the dropdown menu (next to Run button) and in the virtual folder window navigate to Tools \> Search (or Ctrl \+ F to open search). In the search window, both Search Subfolders and Case Insensitive must be **checked**. In the Filename line type in **.ba2** and press the Search button. Number shown will be your total BA2 archive count.
-
-**Vortex** – Navigate to your Fallout 4 / Data folder and search for \*.ba2 with File Explorer’s search bar. Your total ba2 archive count will be the number shown in the bottom left corner.
-
-**\===========================================================================**
-
-**Stack Error Mesh Crash / NIF Crash | LooseFileStream | Do not confuse with the error above.**  
+## Mesh Crash
+### Criteria: LooseFileStream (Not to be confused with LooseFileAsyncStream from the BA2 crash)
 *Exact cause is currently unknown, but very likely related to corrupt mesh (.nif) files.*
 
 **Solution:** The crash log should mention the file path(s) or plugin(s) responsible for this crash, so you’ll have to disable any mods detected by the Auto Scanner and check if it still crashes.
@@ -544,19 +536,19 @@ If you’re consistently getting this crash at some location or specific point, 
 
 If you’re still unable to find the suspect, you’ll have to do it through a binary search.
 
-**\===========================================================================**
 
-**Stack Error MCM Crash | FaderData | FaderMenu | UIMessage**  
+## MCM Crash
+### Criteria: FaderData | FaderMenu | UIMessage
 *Caused by incorrectly loaded Mod Configuration Menu, or one of other interface mods.*
 
 **Solution:** Reinstall Mod Configuration Menu manually by placing the MCM folder into your Fallout 4 / Data folder. If crashing persists, start disabling mods that edit the Pip-Boy / Inventory / Trading / Workbench interface in any way, for example sorting / tagging mods (VIS-G, FallUI Item Sorter) or mods that modify the interface appearance (the older DefUI or the newer FallUI).
 
 It's also not advised to use both DefUI and FallUI at the same time, use either one or the other.
 
----
 
-**Stack Error NPC Pathing Crash (Static) | PathingCell | BSPathBuilder | PathManagerServer**  
-**NPC Pathing Crash (Dynamic) | NavMesh | BSNavmeshObstacleData | DynamicNavmesh**  
+## Pathing Crash
+### Static: PathingCell | BSPathBuilder | PathManagerServer
+### NPC Pathing Crash: NavMesh | BSNavmeshObstacleData | DynamicNavmesh
 *NPCs cannot find a correct path due to conflicting or deleted navmesh/pathing data.*
 
 **Solution:** The log will usually mention the names of plugins that contain pathing data causing the crash under the **STACK** section. Change the load order or disable these plugins. You can also check if any mods contain deleted navmeshes by running the **Plugin Checker** from [Wrye Bash](https://www.nexusmods.com/fallout4/mods/20032/?tab=files).
@@ -569,16 +561,17 @@ If you’re getting this crash in a settlement, it’s likely that one of the se
 
 Very rarely, this crash can be also caused by your current follower(s). You can dismiss any followers you have to a nearby settlement, then fast travel a short distance away and walk back to the same location that caused the crash. If it no longer crashes, assign your followers again.
 
-**\===========================================================================**
 
-**Stack Error Material Crash / BGSM Crash | DefaultTexture\_Black | NiAlphaProperty**  
+
+## Stack Error Material Crash 
+### Criteria: DefaultTexture\_Black | NiAlphaProperty
 *Caused by older CAO versions or corrupted texture material (.bgsm) files.*
 
 **Solution:** If you used older versions of Cathedral Assets Optimizer to pack your mods into BA2s, you’ll have to reinstall these mods as their files are very likely and irreversibly corrupted. 
 
-Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0.X, these aren't compatible with Fallout 4\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
+Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0 or newer, these aren't compatible with Fallout 4 at this time\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
 
-**\===========================================================================**
+
 
 **Stack Error Plugin Limit Crash | BSMemStorage | DataFileHandleReaderWriter**  
 *You went over the plugin limit, having more than 254 total active ESM and ESP plugins combined.*
