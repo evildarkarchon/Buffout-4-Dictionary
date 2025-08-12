@@ -1,6 +1,7 @@
 **BUFFOUT 4 DICTIONARY**  
 **LIST OF KNOWN CRASH LOG MESSAGES & ERRORS**  
 **WITH SOLUTIONS & FIXES ( FALLOUT 4 ONLY )**
+***This is an update of the original [Buffout 4 Dictionary](https://docs.google.com/document/d/17FzeIMJ256xE85XdjoPvv_Zi3C5uHeSTQh6wOZugs4c/edit?pli=1&tab=t.0) by Poet***
 
 **TABLE OF CONTENTS**
 
@@ -30,7 +31,7 @@
 
 - **If necessary, you can contact me directly for any suggestions or corrections.**
 
-**INTRODUCTION**
+## INTRODUCTION
 
 This document lists most common [Buffout 4](https://www.nexusmods.com/fallout4/articles/3115) crash log messages and errors, and ways to prevent or fix them. It’s meant to be used with [Crash Log Auto-Scanner](https://www.nexusmods.com/fallout4/mods/56255) (CLAS) as it will  
 detect all known crash messages for you. Online version of this document is available [here\!](https://docs.google.com/document/d/17FzeIMJ256xE85XdjoPvv_Zi3C5uHeSTQh6wOZugs4c/edit?usp=sharing)
@@ -562,8 +563,7 @@ If you’re getting this crash in a settlement, it’s likely that one of the se
 Very rarely, this crash can be also caused by your current follower(s). You can dismiss any followers you have to a nearby settlement, then fast travel a short distance away and walk back to the same location that caused the crash. If it no longer crashes, assign your followers again.
 
 
-
-## Stack Error Material Crash 
+## Material Crash 
 ### Criteria: DefaultTexture\_Black | NiAlphaProperty
 *Caused by older CAO versions or corrupted texture material (.bgsm) files.*
 
@@ -572,8 +572,8 @@ Very rarely, this crash can be also caused by your current follower(s). You can 
 Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0 or newer, these aren't compatible with Fallout 4 at this time\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
 
 
-
-**Stack Error Plugin Limit Crash | BSMemStorage | DataFileHandleReaderWriter**  
+## Plugin Limit Crash
+### Criteria: BSMemStorage | DataFileHandleReaderWriter
 *You went over the plugin limit, having more than 254 total active ESM and ESP plugins combined.*
 
 **Solution:** Reduce your ESM/ESP plugin count below 254\. I recommend that you run [this script](https://www.nexusmods.com/fallout4/mods/48460?tab=files) in FO4Edit which will flag some plugins as ESL , since plugins with .esl extension or ESL flag count towards a separate limit of 4096 plugins which you'll never have to practically worry about.
@@ -581,16 +581,14 @@ Update CAO to **5.3.13+** since this and newer versions are actually safe to use
 If you’re unable to fall below the 254 limit with the script, you’ll have to either disable some mods or merge them by using zMerge. My OGC 2 guide provides the necessary instructions for that.  
 Older Bethesda games do not support ESL plugins and therefore their ESM/ESP limit is 255\.
 
-**\===========================================================================**
-
-**Stack Error Console Command Crash | SysWindowCompileAndRun | BSResourceNiBinaryStream | ConsoleLogPrinter**  
+## Console Command Crash
+### Criteria: SysWindowCompileAndRun | BSResourceNiBinaryStream | ConsoleLogPrinter
 *Rare crash triggered by improperly scripted console commands.*
 
 **Solution:** If you're using the **sStartingConsoleCommand** in your mods or INI files, make sure to recheck/delete it. This crash could be also caused by modded script files with incorrect console commands or just bad scripting in general. Not much info since these crashes are quite rare.
 
-**\===========================================================================**
-
-**Stack Error Animation / Physics Crash | \+1FCC07E | hkbVariableBindingSet | hkbHandIkControlsModifier | hkbBehaviorGraph | BSAnimationGraphManager**
+## Animation / Physics Crash
+### Criteria: \+1FCC07E | hkbVariableBindingSet | hkbHandIkControlsModifier | hkbBehaviorGraph | BSAnimationGraphManager
 
 *Caused by conflicting animations (Lowered Weapons mod) or other injected data from mods with custom dll files such as Extended Weapon Systems, Weapons Framework or Tactical Reload.*
 
@@ -602,9 +600,8 @@ And make sure you've installed all required patches for the aforementioned mods.
 
 Generally, any mod that changes existing weapon animations or adds custom ones, adds cloth physics to outfits, hair, settlement flags or adds animations to objects can trigger this type of crash message, so disable such mods if this crash is still a problem or perform a binary search.
 
----
-
-**Stack Error Texture Crash / DDS Crash | Create2DTexture | DefaultTexture**  
+## Texture Crash / DDS Crash
+### Criteria: Create2DTexture | DefaultTexture
 *Special type of crash that usually gives a warning message. Commonly caused by corrupted textures or incorrectly resized texture files (ex. 1024 x 1260 instead of 1024 x 1024).*
 
 **Solution:** This warning can in rare cases generate a crash log which will usually contain names of any  **.dds** or **.BGSM** files (or **.nif** in case of LooseFileStream) that most likely caused the crash.  
@@ -618,7 +615,8 @@ If you did not get a crash log, then your only option is to find the suspect thr
 
 **\===========================================================================**
 
-**Stack Error**  **Vulkan Settings Crash | dxvk::DxgiAdapter | dxvk::DxgiFactory**  
+## Vulkan Settings Crash
+### Criteria: dxvk::DxgiAdapter | dxvk::DxgiFactory
 *Caused by incorrect Vulkan Renderer installation or settings.*
 
 **Solution:** This error should only appear with [Vulkan Renderer](https://www.nexusmods.com/fallout4/mods/48053) installed.
@@ -633,9 +631,8 @@ If the game still crashes, open dxvk.conf and try the following settings:
 
 If this doesn’t resolve the crash, manually install the **2.0 Version** or Legacy Version from the same VR mod page and overwrite the current VR files, installation steps are the same.
 
-**\===========================================================================**
-
-**Stack Error Player Character Crash | 0x00000007 | 0x00000008 | 0x00000014**  
+## Player Character Crash
+### Criteria: 0x00000007 | 0x00000008 | 0x00000014
 *(Player Character Crash) Very common, some form of player interaction is broken.*
 
 This crash can be triggered by anything and everything, including but not limited to: player animations or poses, custom player bodies or skeletons, ingestible and interactable objects, custom weapons or weapon animations, or anything that interacts with the player in any way.
@@ -644,9 +641,8 @@ It’s next to impossible to determine the exact suspect for the vast majority o
 
 Your best bet in finding the suspect is through a **binary search** (explained at Page 4\) Sometimes, this crash can be caused by an incorrect load order, so make sure to use the Plugin Checker tool in Wrye Bash to find and fix any problems. Wrye Bash instructions available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
 
-**\===========================================================================**
-
-**DLL Error C++ Redist Crash | MSVCR110.dll | MSVCP140.dll \[?\]**  
+## C++ Redist Crash
+### Criteria: MSVCR110.dll | MSVCP140.dll \[?\]
 *Note that this crash error has a much higher chance to end up as a false positive.*  
 *Can be caused by missing or invalid game dependent libraries.*
 
@@ -660,12 +656,11 @@ If this crash persists, you can open Windows Powershell or Console (CMD) in Admi
 
 For the complete list of Buffout 4 dependencies, see the [Buffout 4 Crash Article](https://www.nexusmods.com/fallout4/articles/3115)
 
-**\===========================================================================** 
-
-**DLL Error Vulkan Memory Crash | KERNELBASE.dll  | MSVCP140.dll | DxvkSubmissionQueue**  
+## Vulkan Memory Crash
+### Criteria: KERNELBASE.dll  | MSVCP140.dll | DxvkSubmissionQueue
 *Caused by a sudden failure in system (vulkan) memory allocation.*
 
-**CAUTION: IF YOU USED [CRASH LOG SCANNER GUI VERSION 1.2 / 1.3](https://www.nexusmods.com/fallout4/mods/63346), THIS ERROR IS VERY LIKELY A FALSE POSITIVE. USE THE UPDATED CRASH LOG AUTO SCANNER FROM [HERE\!](https://www.nexusmods.com/fallout4/mods/56255)**
+**CAUTION: IF YOU USED [CRASH LOG SCANNER GUI VERSION 1.2 / 1.3 (no longer available)](https://www.nexusmods.com/fallout4/mods/63346), THIS ERROR IS VERY LIKELY A FALSE POSITIVE. USE THE UPDATED CRASH LOG AUTO SCANNER FROM [HERE\!](https://www.nexusmods.com/fallout4/mods/56255)**
 
 **Solution:** This error should only appear with [Vulkan Renderer](https://www.nexusmods.com/fallout4/mods/48053) installed and on GPUs with less than 4GB VRAM.  If you get this crash often, you’ll have to reduce memory usage as much as possible. Close unnecessary background programs and services while running the game and pack as many of your mods into BA2 archives, preferably with the [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files)
 
@@ -677,16 +672,16 @@ Additionally, recheck your enblocal.ini and dxvk.conf settings in your game fold
 
 **\===========================================================================**
 
-**Stack Error LOD Crash | BGSQueuedTerrainInitialLoad**  
+## LOD Crash
+### Criteria: BGSQueuedTerrainInitialLoad
 *Caused by unpacked or corrupted Level Of Detail (LOD) files.*
 
 **Solution:** If you’ve already generated new LOD for your load order with FO4LodGen, make sure that these LOD files are packed into BA2 archives with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files)
 
 If you still get the same crash with packed LOD files or after removing your generated LOD, you’ll have to generate new LOD and pack it again. If crashing persists, one of your installed mods likely has corrupted LOD files and you should find the mod that’s causing it through a binary search.
 
-**\===========================================================================**
-
-**Stack Error Decal Crash | BGSDecalManager | BSTempEffectGeometryDecal**  
+## Decal Crash
+### Criteria: BGSDecalManager | BSTempEffectGeometryDecal
 *The game is unable to render certain decals (bullet wounds, blood splatter, bullet impacts, etc.) on a certain armor, clothing or outfit piece, or possibly any other broken mesh that was hit or shot at.*
 
 **Solution:** The autoscan log can be very misleading for these crash messages, so try to visually confirm the exact armor, clothing or outfit (or other nearby mesh) that crashes the game when worn by the player or nearby NPCs while being shot at or hit by bullets and other projectiles.
