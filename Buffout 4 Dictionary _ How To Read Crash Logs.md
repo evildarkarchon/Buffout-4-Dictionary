@@ -4,6 +4,27 @@
 
 **TABLE OF CONTENTS**
 
+| Crash Index                                               |                                                           |                                                           |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| [Stack Overflow Crash](#stack-overflow-crash)             | [Bad Math Crash](#bad-math-crash)                         | [Null Crash](#null-crash)                                 |
+| [Active Effects Crash](#active-effects-crash)             | [Nvidia Driver Crash](#nvidia-driver-crash)               | [Nvidia Debris Crash](#nvidia-debris-crash)               |
+| [Nvidia Reflex Crash](#nvidia-reflex-crash)               | [Audio Driver Crash](#audio-driver-crash)                 | [Corrupted Audio Crash](#corrupted-audio-crash)           |
+| [Generic Crash](#generic-crash)                           | [Rendering Crash](#rendering-crash)                       | [Body Physics Crash](#body-physics-crash)                 |
+| [Antivirus Crash](#antivirus-crash)                       | [DLL Crash](#dll-crash)                                   | [Archive Invalidation Crash](#archive-invalidation-crash) |
+| [Particle Effects Crash](#particle-effects-crash)         | [Script Crash](#script-crash)                             | [Stack Error Equip Crash](#stack-error-equip-crash)       |
+| [Plugin Order Crash](#plugin-order-crash)                 | [Grid Scrap Crash](#grid-scrap-crash)                     | [BA2 Limit Crash](#ba2-limit-crash)                       |
+| [Mesh Crash / NIF Crash](#mesh-crash-nif-crash)           | [MCM Crash](#mcm-crash)                                   | [NPC Pathing Crash](#npc-pathing-crash)                   |
+| [Material Crash / BGSM Crash](#material-crash-bgsm-crash) | [Plugin Limit Crash](#plugin-limit-crash)                 | [Console Command Crash](#console-command-crash)           |
+| [Animation / Physics Crash](#animation-physics-crash)     | [Texture Crash / DDS Crash](#texture-crash-dds-crash)     | [Vulkan Settings Crash](#vulkan-settings-crash)           |
+| [C++ Redist Crash](#c-redist-crash)                       | [Vulkan Memory Crash](#vulkan-memory-crash)               | [LOD Crash](#lod-crash)                                   |
+| [Decal Crash](#decal-crash)                               | [MO2 Extractor Crash](#mo2-extractor-crash)               | [ControlMap Crash](#controlmap-crash)                     |
+| [Map Marker Crash](#map-marker-crash)                     | [Animation Corruption Crash](#animation-corruption-crash) | [Water Collision Crash](#water-collision-crash)           |
+| [Precombines Crash](#precombines-crash)                   | [Interface / Menu Crash](#interface-menu-crash)           | [HUD Crash](#hud-crash)                                   |
+| [GPU Overclock Crash](#gpu-overclock-crash)               | [Save crash/Bad INI Crash](#save-crash-bad-ini-crash)     | [NPC Patrol Crash](#npc-patrol-crash)                     |
+| [NPC Projectile Crash](#npc-projectile-crash)             | [Weapon Crash / Item Crash](#weapon-crash-item-crash)     | [Input Crash](#input-crash)                               |
+| [SS2 / WF Crash](#ss2-wf-crash)                           | [Localized Plugin Crash](#localized-plugin-crash)         | [Camera Position Crash](#camera-position-crash)           |
+
+
 **\*Crash messages / errors with the asterisk are not yet confirmed and have a much higher chance to end up as false positives. See the last few pages for more details and solutions.**
 
 - **Click on any crash names in the Table Of Contents above to jump to the relevant text in this document. In the online version, you need to also click on the Bookmark line / text.**
