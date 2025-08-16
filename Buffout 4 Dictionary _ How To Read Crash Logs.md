@@ -243,7 +243,7 @@ The only currently known mod that can cause this crash is [Mutant Menagerie](htt
 
 ### Criteria: USER32.dll | nvwgf2umx.dll (*crash log usually spams this dll)
 
-*Nvidia specific crash log related to all driver versions 445 and above. Crashing happens at random or is consistent at certain places. Exact cause and relation to anything is currently unknown.*  
+*Nvidia specific crash. Crashing happens at random or is consistent at certain places. Exact cause and relation to anything is currently unknown.*  
 *Crash logs that spam this dll file / message don’t provide any useful information whatsoever.*
 
 ### Solution 1:
