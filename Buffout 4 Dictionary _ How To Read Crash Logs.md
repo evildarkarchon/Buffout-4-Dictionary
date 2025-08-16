@@ -1,6 +1,7 @@
-# **BUFFOUT 4 DICTIONARY**
-
-# LIST OF KNOWN CRASH LOG MESSAGES & ERRORS   WITH SOLUTIONS & FIXES ( FALLOUT 4 ONLY )
+**BUFFOUT 4 DICTIONARY**  
+**LIST OF KNOWN CRASH LOG MESSAGES & ERRORS**  
+**WITH SOLUTIONS & FIXES ( FALLOUT 4 ONLY )**
+***This is an update of the original [Buffout 4 Dictionary](https://docs.google.com/document/d/17FzeIMJ256xE85XdjoPvv_Zi3C5uHeSTQh6wOZugs4c/edit?pli=1&tab=t.0) by Poet***
 
 **TABLE OF CONTENTS**
 
@@ -33,7 +34,7 @@
 
 - **If necessary, you can contact me directly for any suggestions or corrections.**
 
-**INTRODUCTION**
+## INTRODUCTION
 
 This document lists most common [Buffout 4](https://www.nexusmods.com/fallout4/articles/3115) crash log messages and errors, and ways to prevent or fix them. It’s meant to be used with [Crash Log Auto-Scanner](https://www.nexusmods.com/fallout4/mods/56255) (CLAS) as it will  
 detect all known crash messages for you. Online version of this document is available [here\!](https://docs.google.com/document/d/17FzeIMJ256xE85XdjoPvv_Zi3C5uHeSTQh6wOZugs4c/edit?usp=sharing)
@@ -580,9 +581,9 @@ For players that don’t want to use Workshop Framework, use [Power Grid Tools](
 
 *You went over your BA2 limit, which triggers after reaching a certain number of plugins that load at least one BA2 archive. This limit is dynamic and changes based on the number of installed mods.*
 
-**Solution:** For OG (1.10.163) You can unpack the smallest (in terms of bytes) Main.ba2 archives from mods with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files&file_id=199921) or [BSA Browser](https://www.nexusmods.com/fallout4/mods/17061) until crashing stops or you get a different crash message error. Instructions on how to unpack BA2 archives with CAO available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
+**Solution:** For OG (1.10.163) Archives, you can unpack the smallest (in terms of bytes) Main.ba2 archives from mods with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files&file_id=199921) or [BSA Browser](https://www.nexusmods.com/fallout4/mods/17061) until crashing stops or you get a different crash message error. Instructions on how to unpack BA2 archives with CAO available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
 
-For NG (1.10.980+) Archives, you should use the latest builds of BSArchPro from the [xEdit Discord Server](https://discord.gg/5t8RnNQ) in the #xedit-builds channel. It is not recommended to use the actual builds of xEdit, as they are usually emergency releases or testing builds.
+For NG (1.10.980+) Archives, you should do the above using the latest builds of BSArch or BSArchPro from the [xEdit Discord Server](https://discord.gg/5t8RnNQ) in the #xedit-builds channel. It is not recommended to use the actual builds of xEdit, as they are usually emergency releases or testing builds.
 
 You should also only unpack Main.ba2 archives, Texture archives have a separate limit with different (technically non-fatal) consequences.
 
@@ -599,21 +600,10 @@ Mods that attempt to increase the limit should have those options disabled.***
 
 [CM Toolkit](https://www.nexusmods.com/fallout4/mods/87907) can be used to get your current BA2 counts.
 
-**To see the correct amount of total BA2 archives you have currently loaded:**
 
-**MO2** – Simplest way is to navigate to your current MO2 profile folder and open the **archive.txt** file with a text editor that supports showing the number of text lines (ex. Notepad++). This file lists all BA2 archives the game will attempt to load, simply look at how many lines there are in total.
-
-**Alternative Method:** Run **Explore Virtual Folder** from the dropdown menu (next to Run button) and in the virtual folder window navigate to Tools \> Search (or Ctrl \+ F to open search). In the search window, both Search Subfolders and Case Insensitive must be **checked**. In the Filename line type in **.ba2** and press the Search button. Number shown will be your total BA2 archive count.
-
-**Vortex** – Navigate to your Fallout 4 / Data folder and search for \*.ba2 with File Explorer’s search bar. Your total ba2 archive count will be the number shown in the bottom left corner.
-
----
-
-## Mesh Crash / NIF Crash
-
-### Criteria: LooseFileStream
-
-Do not confuse with the error above.   *Exact cause is currently unknown, but very likely related to corrupt mesh (.nif) files.*
+## Mesh Crash
+### Criteria: LooseFileStream (Not to be confused with LooseFileAsyncStream from the BA2 crash)
+*Exact cause is currently unknown, but very likely related to corrupt mesh (.nif) files.*
 
 **Solution:** The crash log should mention the file path(s) or plugin(s) responsible for this crash, so you’ll have to disable any mods detected by the Auto Scanner and check if it still crashes.
 
@@ -625,28 +615,19 @@ If you’re consistently getting this crash at some location or specific point, 
 
 If you’re still unable to find the suspect, you’ll have to do it through a binary search.
 
----
 
 ## MCM Crash
-
-### **FaderData | FaderMenu | UIMessage**
-
+### Criteria: FaderData | FaderMenu | UIMessage
 *Caused by incorrectly loaded Mod Configuration Menu, or one of other interface mods.*
 
 **Solution:** Reinstall Mod Configuration Menu manually by placing the MCM folder into your Fallout 4 / Data folder. If crashing persists, start disabling mods that edit the Pip-Boy / Inventory / Trading / Workbench interface in any way, for example sorting / tagging mods (VIS-G, FallUI Item Sorter) or mods that modify the interface appearance (the older DefUI or the newer FallUI).
 
 It's also not advised to use both DefUI and FallUI at the same time, use either one or the other.
 
----
 
-## NPC Pathing Crash
-
-### Criteria:
-
-#### Static: | PathingCell | BSPathBuilder | PathManagerServer**
-
-#### Dynamic: | NavMesh | BSNavmeshObstacleData | DynamicNavmesh
-
+## Pathing Crash
+### Static: PathingCell | BSPathBuilder | PathManagerServer
+### NPC Pathing Crash: NavMesh | BSNavmeshObstacleData | DynamicNavmesh
 *NPCs cannot find a correct path due to conflicting or deleted navmesh/pathing data.*
 
 **Solution:** The log will usually mention the names of plugins that contain pathing data causing the crash under the **STACK** section. Change the load order or disable these plugins. You can also check if any mods contain deleted navmeshes by running the **Plugin Checker** from [Wrye Bash](https://www.nexusmods.com/fallout4/mods/20032/?tab=files).
@@ -659,24 +640,18 @@ If you’re getting this crash in a settlement, it’s likely that one of the se
 
 Very rarely, this crash can be also caused by your current follower(s). You can dismiss any followers you have to a nearby settlement, then fast travel a short distance away and walk back to the same location that caused the crash. If it no longer crashes, assign your followers again.
 
----
 
-## Material Crash / BGSM Crash
-
-### Criteria:  DefaultTexture\_Black | NiAlphaProperty
-
-Caused by older CAO versions or corrupted texture material (.bgsm) files.*
+## Material Crash 
+### Criteria: DefaultTexture\_Black | NiAlphaProperty
+*Caused by older CAO versions or corrupted texture material (.bgsm) files.*
 
 **Solution:** If you used older versions of Cathedral Assets Optimizer to pack your mods into BA2s, you’ll have to reinstall these mods as their files are very likely and irreversibly corrupted. 
 
-Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0.X, these aren't compatible with Fallout 4\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
+Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0 or newer, these aren't compatible with Fallout 4 at this time\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
 
----
 
 ## Plugin Limit Crash
-
 ### Criteria: BSMemStorage | DataFileHandleReaderWriter
-
 *You went over the plugin limit, having more than 254 total active ESM and ESP plugins combined.*
 
 **Solution:** Reduce your ESM/ESP plugin count below 254\. I recommend that you run [this script](https://www.nexusmods.com/fallout4/mods/48460?tab=files) in FO4Edit which will flag some plugins as ESL , since plugins with .esl extension or ESL flag count towards a separate limit of 4096 plugins which you'll never have to practically worry about.
@@ -684,21 +659,14 @@ Update CAO to **5.3.13+** since this and newer versions are actually safe to use
 If you’re unable to fall below the 254 limit with the script, you’ll have to either disable some mods or merge them by using zMerge. My OGC 2 guide provides the necessary instructions for that.  
 Older Bethesda games do not support ESL plugins and therefore their ESM/ESP limit is 255\.
 
----
-
 ## Console Command Crash
-
 ### Criteria: SysWindowCompileAndRun | BSResourceNiBinaryStream | ConsoleLogPrinter
-
 *Rare crash triggered by improperly scripted console commands.*
 
 **Solution:** If you're using the **sStartingConsoleCommand** in your mods or INI files, make sure to recheck/delete it. This crash could be also caused by modded script files with incorrect console commands or just bad scripting in general. Not much info since these crashes are quite rare.
 
----
-
 ## Animation / Physics Crash
-
-### Criteria: \+1FCC07E | hkbVariableBindingSet | hkbHandIkControlsModifier | hkbBehaviorGraph | BSAnimationGraphManager
+### Criteria: \+1FCC07E | hkbVariableBindingSet | hkbHandIkControlsModifier | hkbBehaviorGraph | BSAnimationGraphManager
 
 *Caused by conflicting animations (Lowered Weapons mod) or other injected data from mods with custom dll files such as Extended Weapon Systems, Weapons Framework or Tactical Reload.*
 
@@ -710,12 +678,8 @@ And make sure you've installed all required patches for the aforementioned mods.
 
 Generally, any mod that changes existing weapon animations or adds custom ones, adds cloth physics to outfits, hair, settlement flags or adds animations to objects can trigger this type of crash message, so disable such mods if this crash is still a problem or perform a binary search.
 
----
-
 ## Texture Crash / DDS Crash
-
 ### Criteria: Create2DTexture | DefaultTexture
-
 *Special type of crash that usually gives a warning message. Commonly caused by corrupted textures or incorrectly resized texture files (ex. 1024 x 1260 instead of 1024 x 1024).*
 
 **Solution:** This warning can in rare cases generate a crash log which will usually contain names of any  **.dds** or **.BGSM** files (or **.nif** in case of LooseFileStream) that most likely caused the crash.  
@@ -730,9 +694,7 @@ If you did not get a crash log, then your only option is to find the suspect thr
 ---
 
 ## Vulkan Settings Crash
-
 ### Criteria: dxvk::DxgiAdapter | dxvk::DxgiFactory
-
 *Caused by incorrect Vulkan Renderer installation or settings.*
 
 **Solution:** This error should only appear with [Vulkan Renderer](https://www.nexusmods.com/fallout4/mods/48053) installed.
@@ -747,9 +709,8 @@ If the game still crashes, open dxvk.conf and try the following settings:
 
 If this doesn’t resolve the crash, manually install the **2.0 Version** or Legacy Version from the same VR mod page and overwrite the current VR files, installation steps are the same.
 
----
-
-Player Character Crash | 0x00000007 | 0x00000008 | 0x00000014**  
+## Player Character Crash
+### Criteria: 0x00000007 | 0x00000008 | 0x00000014
 *(Player Character Crash) Very common, some form of player interaction is broken.*
 
 This crash can be triggered by anything and everything, including but not limited to: player animations or poses, custom player bodies or skeletons, ingestible and interactable objects, custom weapons or weapon animations, or anything that interacts with the player in any way.
@@ -758,12 +719,8 @@ It’s next to impossible to determine the exact suspect for the vast majority o
 
 Your best bet in finding the suspect is through a **binary search** (explained at Page 4\) Sometimes, this crash can be caused by an incorrect load order, so make sure to use the Plugin Checker tool in Wrye Bash to find and fix any problems. Wrye Bash instructions available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
 
----
-
 ## C++ Redist Crash
-
 ### Criteria: MSVCR110.dll | MSVCP140.dll \[?\]
-
 *Note that this crash error has a much higher chance to end up as a false positive.*  
 *Can be caused by missing or invalid game dependent libraries.*
 
@@ -777,15 +734,11 @@ If this crash persists, you can open Windows Powershell or Console (CMD) in Admi
 
 For the complete list of Buffout 4 dependencies, see the [Buffout 4 Crash Article](https://www.nexusmods.com/fallout4/articles/3115)
 
----
-
 ## Vulkan Memory Crash
-
 ### Criteria: KERNELBASE.dll  | MSVCP140.dll | DxvkSubmissionQueue
-
 *Caused by a sudden failure in system (vulkan) memory allocation.*
 
-**CAUTION: IF YOU USED [CRASH LOG SCANNER GUI VERSION 1.2 / 1.3](https://www.nexusmods.com/fallout4/mods/63346), THIS ERROR IS VERY LIKELY A FALSE POSITIVE. USE THE UPDATED CRASH LOG AUTO SCANNER FROM [HERE\!](https://www.nexusmods.com/fallout4/mods/56255)** (This fork is no longer available, but if you do still have this for whatever reason, delete it as it is very obsolete)
+**CAUTION: IF YOU USED [CRASH LOG SCANNER GUI VERSION 1.2 / 1.3 (no longer available)](https://www.nexusmods.com/fallout4/mods/63346), THIS ERROR IS VERY LIKELY A FALSE POSITIVE. USE THE UPDATED CRASH LOG AUTO SCANNER FROM [HERE\!](https://www.nexusmods.com/fallout4/mods/56255)**
 
 **Solution:** This error should only appear with [Vulkan Renderer](https://www.nexusmods.com/fallout4/mods/48053) installed and on GPUs with less than 4GB VRAM.  If you get this crash often, you’ll have to reduce memory usage as much as possible. Close unnecessary background programs and services while running the game and pack as many of your mods into BA2 archives, preferably with the [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files)
 
@@ -798,21 +751,15 @@ Additionally, recheck your enblocal.ini and dxvk.conf settings in your game fold
 ---
 
 ## LOD Crash
-
 ### Criteria: BGSQueuedTerrainInitialLoad
-
 *Caused by unpacked or corrupted Level Of Detail (LOD) files.*
 
 **Solution:** If you’ve already generated new LOD for your load order with FO4LodGen, make sure that these LOD files are packed into BA2 archives with [Cathedral Assets Optimizer](https://www.nexusmods.com/skyrimspecialedition/mods/23316?tab=files)
 
 If you still get the same crash with packed LOD files or after removing your generated LOD, you’ll have to generate new LOD and pack it again. If crashing persists, one of your installed mods likely has corrupted LOD files and you should find the mod that’s causing it through a binary search.
 
----
-
 ## Decal Crash
-
 ### Criteria: BGSDecalManager | BSTempEffectGeometryDecal
-
 *The game is unable to render certain decals (bullet wounds, blood splatter, bullet impacts, etc.) on a certain armor, clothing or outfit piece, or possibly any other broken mesh that was hit or shot at.*
 
 **Solution:** The autoscan log can be very misleading for these crash messages, so try to visually confirm the exact armor, clothing or outfit (or other nearby mesh) that crashes the game when worn by the player or nearby NPCs while being shot at or hit by bullets and other projectiles.
