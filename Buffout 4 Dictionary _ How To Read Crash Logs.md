@@ -1,6 +1,7 @@
 **BUFFOUT 4 DICTIONARY**  
 **LIST OF KNOWN CRASH LOG MESSAGES & ERRORS**  
 **WITH SOLUTIONS & FIXES ( FALLOUT 4 ONLY )**
+
 ***This is an update of the original [Buffout 4 Dictionary](https://docs.google.com/document/d/17FzeIMJ256xE85XdjoPvv_Zi3C5uHeSTQh6wOZugs4c/edit?pli=1&tab=t.0) by Poet***
 
 **TABLE OF CONTENTS**
@@ -172,6 +173,7 @@ Below are listed all known log messages that appear for certain crash errors and
 
 ---
 
+<a id="stack-overflow-crash"></a>
 ## Stack Overflow Crash
 
 ### Criteria: EXCEPTION\_STACK\_OVERFLOW
@@ -192,6 +194,7 @@ Some early reports suggest the Reference Cap / Limit being at fault here. Run [t
 
 ---
 
+<a id="bad-math-crash"></a>
 ## Bad Math Crash
 
 ### Criteria: EXCEPTION\_INT\_DIVIDE\_BY\_ZERO
@@ -212,6 +215,7 @@ If disabling Vsync everywhere doesn't help, make sure your monitor's refresh rat
 
 ---
 
+<a id="null-crash"></a>
 ## Null Crash
 
 ### Criteria: EXCEPTION\_ACCESS\_VIOLATION
@@ -222,6 +226,7 @@ If disabling Vsync everywhere doesn't help, make sure your monitor's refresh rat
 
 ---
 
+<a id="active-effects-crash"></a>
 ## Active Effects Crash
 
 ### Criteria: EXCEPTION\_ACCESS\_VIOLATION at 0x000100000000
@@ -233,6 +238,7 @@ The only currently known mod that can cause this crash is [Mutant Menagerie](htt
 
 ---
 
+<a id="nvidia-driver-crash"></a>
 ## Nvidia Driver Crash
 
 ### Criteria: USER32.dll | nvwgf2umx.dll (*crash log usually spams this dll)
@@ -324,6 +330,7 @@ Completely reinstall your graphics drivers with factory settings applied.
 
 ---
 
+<a id="nvidia-debris-crash"></a>
 ## Nvidia Debris Crash
 
 ### Criteria: flexRelease\_x64.dll | \+03EE452
@@ -340,6 +347,7 @@ Completely reinstall your graphics drivers with factory settings applied.
 
 ---
 
+<a id="nvidia-reflex-crash"></a>
 ## Nvidia Reflex Crash
 
 ### Criteria:  ME-OPT|3A0000, ME-OPT|AD0000, ME-OPT|8E0000, ME-OPT|NVIDIA_Reflex, ME-OPT|Buffout4, NVIDIA_Reflex.dll
@@ -354,6 +362,7 @@ Investigation around this crash and mod are still ongoing, though I’m fairly c
 
 ---
 
+<a id="audio-driver-crash"></a>
 ## Audio Driver Crash
 
 ### Criteria: X3DAudio1\_7.dll | XAudio2\_7.dll
@@ -374,6 +383,7 @@ If none of the above helps, recheck and disable any mods that add or edit audio 
 
 ---
 
+<a id="corrupted-audio-crash"></a>
 ## Corrupted Audio Crash
 
 ### Criteria: BSXAudio2DataSrc | BSXAudio2GameSound
@@ -387,6 +397,7 @@ Most likely the audio file causing this crash has to be resaved with the correct
 
 ---
 
+<a id="generic-crash"></a>
 ## Generic Crash
 
 ### Criteria: tbbmalloc.dll
@@ -405,6 +416,7 @@ Most likely the audio file causing this crash has to be resaved with the correct
 
 ---
 
+<a id="rendering-crash"></a>
 ## Rendering Crash
 
 ### Criteria: d3d11.dll
@@ -427,6 +439,7 @@ INI reset is done by deleting all game .ini files inside your Documents\\My Game
 
 ---
 
+<a id="body-physics-crash"></a>
 ## Body Physics Crash
 
 ### Criteria: cbp.dll
@@ -448,6 +461,7 @@ If you get this crash message / error without CHW installed, another reason for 
 And if you’re running your game with **Advanced Animation Framework** and adult content oriented mods, switch to an older [Looks Menu](https://www.nexusmods.com/fallout4/mods/12631) version **1.6.18**, as newer versions tend to break certain body (erection) morphs and can cause a crash if C key is pressed during character creation.  
 For all other AAF and adult mod related problems, visit the [AAF (Dagoba) Discord Server](https://discord.com/invite/B95qTEn)
 
+<a id="antivirus-crash"></a>
 ## Antivirus Crash
 
 ### Criteria: bdhkm64.dll | usvfs::hook\_DeleteFileW
@@ -459,6 +473,7 @@ For all other AAF and adult mod related problems, visit the [AAF (Dagoba) Discor
 
 ---
 
+<a id="dll-crash"></a>
 ## DLL Crash
 
 ### Criteria: DLCBannerDLC01.dds
@@ -483,6 +498,7 @@ INI reset is done by deleting all game .ini files inside your Documents\\My Game
 
 ---
 
+<a id="archive-invalidation-crash"></a>
 ## Archive Invalidation Crash
 
 ### Criteria: DLCBanner05.dds
@@ -499,6 +515,7 @@ INI reset is done by deleting all game .ini files inside your Documents\\My Game
 
 ---
 
+<a id="particle-effects-crash"></a>
 ## Particle Effects Crash
 
 ### Criteria: ParticleSystem | MasterParticleSystem
@@ -511,6 +528,7 @@ Watch out for these ini files and delete them or set their **iMaxDesired** value
 
 ---
 
+<a id="script-crash"></a>
 ## Script Crash
 
 ### Criteria: Papyrus | VirtualMachine
@@ -526,6 +544,7 @@ Sometimes, this crash can be caused by an incorrect F4SE installation or by othe
 
 ---
 
+<a id="stack-error-equip-crash"></a>
 ## Stack Error Equip Crash
 
 ### Criteria: PipboyMapData
@@ -540,6 +559,7 @@ If crashing stopped, equip the same items. If it crashes again, then one of the 
 
 ---
 
+<a id="plugin-order-crash"></a>
 ## Plugin Order Crash
 
 ### Criteria: GamebryoSequenceGenerator | \+0DB9300
@@ -558,6 +578,7 @@ Rarely, this crash message is a false positive, in which case you can temporaril
 
 ---
 
+<a id="grid-scrap-crash"></a>
 ## Grid Scrap Crash
 
 ### Criteria: GridAdjacencyMapNode | PowerUtils
@@ -575,6 +596,7 @@ For players that don’t want to use Workshop Framework, use [Power Grid Tools](
 
 ---
 
+<a id="ba2-limit-crash"></a>
 ## BA2 Limit Crash
 
 ### Criteria: LooseFileAsyncStream
@@ -600,7 +622,7 @@ Mods that attempt to increase the limit should have those options disabled.***
 
 [CM Toolkit](https://www.nexusmods.com/fallout4/mods/87907) can be used to get your current BA2 counts.
 
-
+<a id="mesh-crash-nif-crash"></a>
 ## Mesh Crash
 ### Criteria: LooseFileStream (Not to be confused with LooseFileAsyncStream from the BA2 crash)
 *Exact cause is currently unknown, but very likely related to corrupt mesh (.nif) files.*
@@ -616,6 +638,7 @@ If you’re consistently getting this crash at some location or specific point, 
 If you’re still unable to find the suspect, you’ll have to do it through a binary search.
 
 
+<a id="mcm-crash"></a>
 ## MCM Crash
 ### Criteria: FaderData | FaderMenu | UIMessage
 *Caused by incorrectly loaded Mod Configuration Menu, or one of other interface mods.*
@@ -625,6 +648,7 @@ If you’re still unable to find the suspect, you’ll have to do it through a b
 It's also not advised to use both DefUI and FallUI at the same time, use either one or the other.
 
 
+<a id="npc-pathing-crash"></a>
 ## Pathing Crash
 ### Static: PathingCell | BSPathBuilder | PathManagerServer
 ### NPC Pathing Crash: NavMesh | BSNavmeshObstacleData | DynamicNavmesh
@@ -641,6 +665,7 @@ If you’re getting this crash in a settlement, it’s likely that one of the se
 Very rarely, this crash can be also caused by your current follower(s). You can dismiss any followers you have to a nearby settlement, then fast travel a short distance away and walk back to the same location that caused the crash. If it no longer crashes, assign your followers again.
 
 
+<a id="material-crash-bgsm-crash"></a>
 ## Material Crash 
 ### Criteria: DefaultTexture\_Black | NiAlphaProperty
 *Caused by older CAO versions or corrupted texture material (.bgsm) files.*
@@ -650,6 +675,7 @@ Very rarely, this crash can be also caused by your current follower(s). You can 
 Update CAO to **5.3.13+** since this and newer versions are actually safe to use. Do NOT use CAO versions 6.0 or newer, these aren't compatible with Fallout 4 at this time\. Otherwise, you'll have to perform a binary search to determine which mod caused the crash, as the given crash log is otherwise useless.
 
 
+<a id="plugin-limit-crash"></a>
 ## Plugin Limit Crash
 ### Criteria: BSMemStorage | DataFileHandleReaderWriter
 *You went over the plugin limit, having more than 254 total active ESM and ESP plugins combined.*
@@ -659,12 +685,14 @@ Update CAO to **5.3.13+** since this and newer versions are actually safe to use
 If you’re unable to fall below the 254 limit with the script, you’ll have to either disable some mods or merge them by using zMerge. My OGC 2 guide provides the necessary instructions for that.  
 Older Bethesda games do not support ESL plugins and therefore their ESM/ESP limit is 255\.
 
+<a id="console-command-crash"></a>
 ## Console Command Crash
 ### Criteria: SysWindowCompileAndRun | BSResourceNiBinaryStream | ConsoleLogPrinter
 *Rare crash triggered by improperly scripted console commands.*
 
 **Solution:** If you're using the **sStartingConsoleCommand** in your mods or INI files, make sure to recheck/delete it. This crash could be also caused by modded script files with incorrect console commands or just bad scripting in general. Not much info since these crashes are quite rare.
 
+<a id="animation-physics-crash"></a>
 ## Animation / Physics Crash
 ### Criteria: \+1FCC07E | hkbVariableBindingSet | hkbHandIkControlsModifier | hkbBehaviorGraph | BSAnimationGraphManager
 
@@ -678,6 +706,7 @@ And make sure you've installed all required patches for the aforementioned mods.
 
 Generally, any mod that changes existing weapon animations or adds custom ones, adds cloth physics to outfits, hair, settlement flags or adds animations to objects can trigger this type of crash message, so disable such mods if this crash is still a problem or perform a binary search.
 
+<a id="texture-crash-dds-crash"></a>
 ## Texture Crash / DDS Crash
 ### Criteria: Create2DTexture | DefaultTexture
 *Special type of crash that usually gives a warning message. Commonly caused by corrupted textures or incorrectly resized texture files (ex. 1024 x 1260 instead of 1024 x 1024).*
@@ -693,6 +722,7 @@ If you did not get a crash log, then your only option is to find the suspect thr
 
 ---
 
+<a id="vulkan-settings-crash"></a>
 ## Vulkan Settings Crash
 ### Criteria: dxvk::DxgiAdapter | dxvk::DxgiFactory
 *Caused by incorrect Vulkan Renderer installation or settings.*
@@ -709,6 +739,7 @@ If the game still crashes, open dxvk.conf and try the following settings:
 
 If this doesn’t resolve the crash, manually install the **2.0 Version** or Legacy Version from the same VR mod page and overwrite the current VR files, installation steps are the same.
 
+<a id="player-character-crash"></a>
 ## Player Character Crash
 ### Criteria: 0x00000007 | 0x00000008 | 0x00000014
 *(Player Character Crash) Very common, some form of player interaction is broken.*
@@ -719,6 +750,7 @@ It’s next to impossible to determine the exact suspect for the vast majority o
 
 Your best bet in finding the suspect is through a **binary search** (explained at Page 4\) Sometimes, this crash can be caused by an incorrect load order, so make sure to use the Plugin Checker tool in Wrye Bash to find and fix any problems. Wrye Bash instructions available in [this article\!](https://www.nexusmods.com/fallout4/articles/4141)
 
+<a id="c-redist-crash"></a>
 ## C++ Redist Crash
 ### Criteria: MSVCR110.dll | MSVCP140.dll \[?\]
 *Note that this crash error has a much higher chance to end up as a false positive.*  
@@ -734,6 +766,7 @@ If this crash persists, you can open Windows Powershell or Console (CMD) in Admi
 
 For the complete list of Buffout 4 dependencies, see the [Buffout 4 Crash Article](https://www.nexusmods.com/fallout4/articles/3115)
 
+<a id="vulkan-memory-crash"></a>
 ## Vulkan Memory Crash
 ### Criteria: KERNELBASE.dll  | MSVCP140.dll | DxvkSubmissionQueue
 *Caused by a sudden failure in system (vulkan) memory allocation.*
@@ -750,6 +783,7 @@ Additionally, recheck your enblocal.ini and dxvk.conf settings in your game fold
 
 ---
 
+<a id="lod-crash"></a>
 ## LOD Crash
 ### Criteria: BGSQueuedTerrainInitialLoad
 *Caused by unpacked or corrupted Level Of Detail (LOD) files.*
@@ -758,6 +792,7 @@ Additionally, recheck your enblocal.ini and dxvk.conf settings in your game fold
 
 If you still get the same crash with packed LOD files or after removing your generated LOD, you’ll have to generate new LOD and pack it again. If crashing persists, one of your installed mods likely has corrupted LOD files and you should find the mod that’s causing it through a binary search.
 
+<a id="decal-crash"></a>
 ## Decal Crash
 ### Criteria: BGSDecalManager | BSTempEffectGeometryDecal
 *The game is unable to render certain decals (bullet wounds, blood splatter, bullet impacts, etc.) on a certain armor, clothing or outfit piece, or possibly any other broken mesh that was hit or shot at.*
@@ -769,6 +804,7 @@ In some cases, reducing decal quality with BethINI might also help prevent this 
 
 ---
 
+<a id="mo2-extractor-crash"></a>
 ## MO2 Extractor Crash
 
 ### Criteria: BSD3DResourceCreator
@@ -786,6 +822,7 @@ If you haven’t used MO2 Extractor and you’re getting this crash, it’s like
 
 ---
 
+<a id="controlmap-crash"></a>
 ## ControlMap Crash
 
 ### Criteria: nsStartMenu\_InputMapping | RemapHandler
@@ -798,6 +835,7 @@ The only currently known mod that can sometimes cause this crash is [Toggle Aim]
 
 ---
 
+<a id="map-marker-crash"></a>
 ## Map Marker Crash
 
 ### Criteria: HUDCompass | HUDCompassMarker | attachMovie()
@@ -808,6 +846,7 @@ The only currently known mod that can sometimes cause this crash is [Toggle Aim]
 
 ---
 
+<a id="animation-corruption-crash"></a>
 ## Animation Corruption Crash
 
 ### Criteria: \+1B938F0 | AnimationFileLookupSingletonHelper | AnimTextData\\AnimationFileData
@@ -833,6 +872,7 @@ INI reset is done by deleting all game .ini files inside your Documents\\My Game
 
 ---
 
+<a id="water-collision-crash"></a>
 ## Water Collision Crash
 
 ### Criteria: BGSWaterCollisionManager | TESWaterForm \[?\]
