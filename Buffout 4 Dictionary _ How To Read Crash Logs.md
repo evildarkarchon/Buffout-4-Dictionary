@@ -13,7 +13,7 @@
 | [Nvidia Reflex Crash](#nvidia-reflex-crash)               | [Audio Driver Crash](#audio-driver-crash)                 | [Corrupted Audio Crash](#corrupted-audio-crash)           |
 | [Generic Crash](#generic-crash)                           | [Rendering Crash](#rendering-crash)                       | [Body Physics Crash](#body-physics-crash)                 |
 | [Antivirus Crash](#antivirus-crash)                       | [DLL Crash](#dll-crash)                                   | [Archive Invalidation Crash](#archive-invalidation-crash) |
-| [Particle Effects Crash](#particle-effects-crash)         | [Script Crash](#script-crash)                             | [Stack Error Equip Crash](#stack-error-equip-crash)       |
+| [Particle Effects Crash](#particle-effects-crash)         | [Script Crash](#script-crash)                             | [Equip Crash](#stack-error-equip-crash)       |
 | [Plugin Order Crash](#plugin-order-crash)                 | [Grid Scrap Crash](#grid-scrap-crash)                     | [BA2 Limit Crash](#ba2-limit-crash)                       |
 | [Mesh Crash / NIF Crash](#mesh-crash-nif-crash)           | [MCM Crash](#mcm-crash)                                   | [NPC Pathing Crash](#npc-pathing-crash)                   |
 | [Material Crash / BGSM Crash](#material-crash-bgsm-crash) | [Plugin Limit Crash](#plugin-limit-crash)                 | [Console Command Crash](#console-command-crash)           |
@@ -545,7 +545,7 @@ Sometimes, this crash can be caused by an incorrect F4SE installation or by othe
 ---
 
 <a id="stack-error-equip-crash"></a>
-## Stack Error Equip Crash
+## Equip Crash
 
 ### Criteria: PipboyMapData
 
