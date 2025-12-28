@@ -13,7 +13,7 @@
 | [Nvidia Reflex Crash](#nvidia-reflex-crash)               | [Audio Driver Crash](#audio-driver-crash)                 | [Corrupted Audio Crash](#corrupted-audio-crash)           |
 | [Generic Crash](#generic-crash)                           | [Rendering Crash](#rendering-crash)                       | [Body Physics Crash](#body-physics-crash)                 |
 | [Antivirus Crash](#antivirus-crash)                       | [DLL Crash](#dll-crash)                                   | [Archive Invalidation Crash](#archive-invalidation-crash) |
-| [Particle Effects Crash](#particle-effects-crash)         | [Script Crash](#script-crash)                             | [Equip Crash](#stack-error-equip-crash)       |
+| [Particle Effects Crash](#particle-effects-crash)         | [Script Crash](#script-crash)                             | [Equip Crash](#stack-error-equip-crash)                   |
 | [Plugin Order Crash](#plugin-order-crash)                 | [Grid Scrap Crash](#grid-scrap-crash)                     | [BA2 Limit Crash](#ba2-limit-crash)                       |
 | [Mesh Crash / NIF Crash](#mesh-crash-nif-crash)           | [MCM Crash](#mcm-crash)                                   | [NPC Pathing Crash](#npc-pathing-crash)                   |
 | [Material Crash / BGSM Crash](#material-crash-bgsm-crash) | [Plugin Limit Crash](#plugin-limit-crash)                 | [Console Command Crash](#console-command-crash)           |
@@ -25,6 +25,7 @@
 | [GPU Overclock Crash](#gpu-overclock-crash)               | [Save crash/Bad INI Crash](#save-crash-bad-ini-crash)     | [NPC Patrol Crash](#npc-patrol-crash)                     |
 | [NPC Projectile Crash](#npc-projectile-crash)             | [Weapon Crash / Item Crash](#weapon-crash-item-crash)     | [Input Crash](#input-crash)                               |
 | [SS2 / WF Crash](#ss2-wf-crash)                           | [Localized Plugin Crash](#localized-plugin-crash)         | [Camera Position Crash](#camera-position-crash)           |
+| [Player Character Crash](#player-character-crash)         |                                                           |                                                           |
 
 
 **\*Crash messages / errors with the asterisk are not yet confirmed and have a much higher chance to end up as false positives. See the last few pages for more details and solutions.**
@@ -901,6 +902,7 @@ AND try to be specific\! Was it in combat? While opening the Pip-Boy? While ente
 
 ---
 
+<a id="precombines-crash"></a>
 ## (Precombines Crash)
 
 ### Criteria: BGSCombinedCellGeometryDB | BSPackedCombinedGeomDataExtra | BGSStaticCollection TESObjectCELL (?)
@@ -910,6 +912,7 @@ See if you get this crash with OR without [Previs Repair Pack](https://www.nexus
 
 ---
 
+<a id="interface-menu-crash"></a>
 ## (Interface / Menu Crash)
 
 ### Criteria: Unhandled exception "EXCEPTION\_BREAKPOINT”**
@@ -920,6 +923,7 @@ Mods possibly causing this: Immersive HUD / VIS-G Item Sorting
 
 ---
 
+<a id="hud-crash"></a>
 ## (HUD Crash)
 
 ### Criteria: HUDAmmoCounter | BSScaleformTranslator (?)**
@@ -931,6 +935,7 @@ Try to determine if you’re getting this crash with a specific weapon or while 
 
 ---
 
+<a id="gpu-overclock-crash"></a>
 ## (GPU Overclock Crash)
 
 ### Criteria: ShadowSceneNode | myID3D11DeviceContext | BSDeferredDecal | BSDFDecal
@@ -946,6 +951,7 @@ Always download MSI Afterburner from the [official website\!](https://www.msi.co
 
 ---
 
+<a id="save-crash-bad-ini-crash"></a>
 ## (Save crash/Bad INI Crash)
 
 ### Criteria BGSSaveFormBuffer | BGSSaveLoadManager (?) | BGSSaveLoadThread (?) | *Call Stacks: \+0CDAD30 | \+0D09AB7 | \+01786FD
@@ -963,6 +969,7 @@ If the above circumstances don’t apply to you and you’re still getting this 
 
 ---
 
+<a id="npc-patrol-crash"></a>
 ## (NPC Patrol Crash)
 
 ### Criteria: BGSProcedurePatrol | BGSProcedurePatrolExecState | PatrolActorPackageData
@@ -971,6 +978,7 @@ Almost certainly a pathing issue, but could be due to broken or missing navmeshe
 
 **\===========================================================================**
 
+<a id="npc-projectile-crash"></a>
 ## (NPC Projectile Crash)
 
 ### Elusive Error BGSProjectile | CombatProjectileAimController
@@ -980,6 +988,7 @@ The only currently known mod that can cause this crash is [Respawnable Legendary
 
 ---
 
+<a id="weapon-crash-item-crash"></a>
 ## (Weapon Crash / Item Crash)
 
 ### Criteria: \+0B2C44B | BGSMod::Attachment | BGSMod::Template | BGSMod::Template::Item | TESObjectARMO | TESObjectWEAP |
@@ -988,6 +997,7 @@ Likely caused by conflicting item records or bad item data, exact logic behind i
 
 ---
 
+<a id="input-crash"></a>
 ## (Input Crash)
 
 ### Criteria: ButtonEvent | MenuControls | MenuOpenCloseHandler | PlayerControls | DXGISwapChain (?)
@@ -997,6 +1007,7 @@ The only currently known mod that can cause this crash is [Workshop Rearranged](
 
 **\===========================================================================**
 
+<a id="ss2-wf-crash"></a>
 ## (SS2 / WF Crash)
 
 ### Criteria: \+01F498D | \+03F89A3 | StartWorkshop | IsWithinBuildableArea
@@ -1011,6 +1022,7 @@ Keep in mind that this issue is different from **Grid Scrap Crash** and attempti
 
 ---
 
+<a id="localized-plugin-crash"></a>
 ## (Localized Plugin Crash)
 
 ### Criteria: \+01B59A4
@@ -1023,6 +1035,7 @@ Mods that are known to sometimes trigger this crash error are: [Knockout Framewo
 
 ---
 
+<a id="camera-position-crash"></a>
 ## (Camera Position Crash)
 
 ### Elusive Error NiCamera | WorldRoot Camera
