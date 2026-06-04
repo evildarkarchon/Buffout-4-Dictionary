@@ -443,7 +443,7 @@ INI reset is done by deleting all game .ini files inside your Documents\\My Game
 <a id="body-physics-crash"></a>
 ## Body Physics Crash
 
-### Criteria: cbp.dll
+### Criteria: cbp.dll | cbp_ae.dll | skeleton.nif
 
 *Mods that add different body physics or change the female body usually trigger this crash.*
 *Caused by either these mods or a compatibility issue with Classic Holstered Weapons.*
