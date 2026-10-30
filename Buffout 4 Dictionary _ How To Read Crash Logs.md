@@ -537,9 +537,7 @@ Watch out for these ini files and delete them or set their **iMaxDesired** value
 *Caused by a desync in the scripting virtual machine that can even*  
 *result in a partially or completely corrupted save file.*
 
-**Solution:** One of the scripted mods that your save depends on is either missing or it corrupted the save file. Manually download the latest version of [ReSaver](https://www.nexusmods.com/fallout4/mods/22633?tab=files)﻿ and extract it somewhere.
-
-Run Resaver.exe and open your latest save with it, then select Clean \> **Remove Unattached Instances** and Clean \> **Purify FormLists**. If the same crash messages persist, that save is most likely unsalvageable. Try reverting to an older save or simply start a new game. And you should never permanently disable or uninstall scripted mods from existing saves, mid-playthrough.
+**Solution:** One of the scripted mods that your save depends on is either missing or it corrupted the save file.
 
 Sometimes, this crash can be caused by an incorrect F4SE installation or by other mods that unintentionally overwrite F4SE script files (usually by including copies of F4SE scripts with the mod files). Therefore, recheck your F4SE installation and see if any mods overwrite scripts that they shouldn’t. You can check this easily with MO2 by enabling Archives Parsing in the settings.
 
